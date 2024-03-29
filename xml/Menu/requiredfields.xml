@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/requiredactivity</path>
+    <page_callback>CRM_Requiredfields_Form_REQUIREDACTIVITY</page_callback>
+    <title>REQUIREDACTIVITY</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>

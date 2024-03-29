@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<extension key="requiredfields" type="module">
+  <file>requiredfields</file>
+  <name>requiredfields</name>
+  <description>Make the default assigned to field required</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>Wei Hao</author>
+    <email>weihao@ocotpus8.com</email>
+  </maintainer>
+  <releaseDate>2024-03-03</releaseDate>
+  <version>1.0</version>
+  <develStage>alpha</develStage>
+  <compatibility>
+    <ver>5.66</ver>
+  </compatibility>
+  <comments>This is a new, undeveloped module</comments>
+  <classloader>
+    <psr0 prefix="CRM_" path="."/>
+    <psr4 prefix="Civi\" path="Civi"/>
+  </classloader>
+  <civix>
+    <namespace>CRM/Requiredfields</namespace>
+    <format>23.02.1</format>
+    <angularModule>crmRequiredfields</angularModule>
+  </civix>
+  <mixins>
+    <mixin>mgd-php@1.0.0</mixin>
+    <mixin>setting-php@1.0.0</mixin>
+    <mixin>smarty-v2@1.0.0</mixin>
+    <mixin>menu-xml@1.0.0</mixin>
+    <mixin>entity-types-php@1.0.0</mixin>
+  </mixins>
+  <upgrader>CRM_Requiredfields_Upgrader</upgrader>
+</extension>
