@@ -27,6 +27,7 @@ class CRM_Requiredfields_Form_RequiredActivity extends CRM_Core_Form {
       'required_activity_id' => isset($params['required_activity_id']) ? $params['required_activity_id'] : '',
       'contact_id' => isset($params['contact_id']) ? $params['contact_id'] : '',
       'relationship_type_id' => isset($params['relationship_type_id']) ? $params['relationship_type_id'] : '',
+      'required' => isset($params['required']) ? (bool) $params['required'] : false,
     );
 
     $this->setDefaults($defaults);
@@ -58,6 +59,9 @@ class CRM_Requiredfields_Form_RequiredActivity extends CRM_Core_Form {
       TRUE, // is required
       ['multiple' => 'multiple', 'class' => 'crm-select2', 'placeholder' => ts('- select -')] // Placeholder attribute
     );
+    $this->addElement('checkbox',
+     'required',
+     'Is Assigned to Required?');
     $this->addButtons([
       [ 
         'type' => 'submit',
@@ -77,7 +81,8 @@ class CRM_Requiredfields_Form_RequiredActivity extends CRM_Core_Form {
     $postedVals = array(
       'required_activity_id' => null,
       'contact_id' => null,
-      'relationship_type_id' => null
+      'relationship_type_id' => null,
+      'required' => null
     );
 
     $values = $this->exportValues();
@@ -93,6 +98,8 @@ class CRM_Requiredfields_Form_RequiredActivity extends CRM_Core_Form {
     $postedVals['required_activity_id'] = $values['required_activity_id'];
     $postedVals['contact_id'] = $values['contact_id'];
     $postedVals['relationship_type_id'] = $values['relationship_type_id'];
+    $postedVals['required'] = isset($values['required']) ? 1 : 0;
+
 
     $checkFields = [
       'required_activity_id' => 'Activity',
