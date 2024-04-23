@@ -115,13 +115,15 @@ function requiredfields_civicrm_buildForm($formName, &$form) {
 
     // CHECK IF ACTIVITY ID IS IN ARRAY 
     if (in_array($activityTypeId, $activityIDArray)){
-
-      // Make the "Assigned To" field required
-      $form->addRule('assignee_contact_id', ts('Assigned To is a required field.'), 'required');
+      if(isset($settings['required'])){
+        if($settings['required'] == TRUE){
+        // Make the "Assigned To" field required
+        $form->addRule('assignee_contact_id', ts('Assigned To is a required field.'), 'required');
+        }
+      }
 
       // Set default value for the "Assigned To" field 
       $form->setDefaults(array('assignee_contact_id' => $unique));
-
     }
   }
 }
