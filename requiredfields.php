@@ -135,7 +135,7 @@ function requiredfields_civicrm_buildForm($formName, &$form) {
  */
 function requiredfields_civicrm_navigationMenu(&$menu) {
   _requiredfields_civix_insert_navigation_menu($menu, 'Administer/System Settings', array(
-    'label' => ts('RequiredFields'),
+    'label' => ts('RequiredFields Settings'),
     'name' => 'required_fields',
     'url' => 'civicrm/requiredactivity?reset=1',
     'permission' => 'access CiviCRM, administer CiviCRM',
