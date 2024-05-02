@@ -47,7 +47,7 @@ function requiredfields_civicrm_enable()
 function requiredfields_civicrm_buildForm($formName, &$form) {
 
   // Check that the form is a Case Activity Form
-  if ($formName === 'CRM_Case_Form_Activity') {
+  if ($formName === 'CRM_Case_Form_Activity' && $form->getAction() == CRM_Core_Action::ADD) {
 
     $caseid = implode(",", $form->getVar('_caseId'));
 
